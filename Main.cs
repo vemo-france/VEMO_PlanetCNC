@@ -116,7 +116,7 @@ namespace VEMO_PlanetCNC
 
 			AddButton("gcode", async () => await _pcnc.GCode("G0 X10 Y10"));
 
-			AddButton("jog", async () => _result.Items.Add(await _pcnc.Jog()));
+			AddButton("jog", async () => _result.Items.Add(string.Join(", ", (await _pcnc.Jog()).Select(v => v.ToString()).ToArray())));
 			AddButton("jog1", async () => _result.Items.Add(await _pcnc.Jog1()));
 			AddButton("jog2", async () => _result.Items.Add(await _pcnc.Jog2()));
 			AddButton("jog3", async () => _result.Items.Add(await _pcnc.Jog3()));
