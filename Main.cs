@@ -22,7 +22,7 @@ namespace VEMO_PlanetCNC
 
 			AddButton("mdi", async () => await _pcnc.Mdi("/101"));
 
-			AddButton("param", async () => _result.Items.Add("color3DGrid = " + await _pcnc.GetStringParam("color3DGrid")));
+			AddButton("param", async () => _result.Items.Add("done = " + await _pcnc.GetStringParam("done")));
 
 			AddButton("show", async () => await _pcnc.Show());
 			AddButton("hide", async () => await _pcnc.Hide());

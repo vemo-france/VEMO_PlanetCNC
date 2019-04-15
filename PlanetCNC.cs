@@ -72,11 +72,9 @@ namespace VEMO_PlanetCNC
 		private Queue<Message> _messages;
 		private Thread _thread;
 		private bool _run = true;
-		private SynchronizationContext _synchronizationContext;
 
 		public PlanetCNC()
 		{
-			_synchronizationContext = SynchronizationContext.Current;
 			_pipe = new NamedPipeClientStream(".", "PlanetCNC", PipeDirection.InOut, PipeOptions.None, System.Security.Principal.TokenImpersonationLevel.Impersonation);
 			_pipe.Connect(200);
 
